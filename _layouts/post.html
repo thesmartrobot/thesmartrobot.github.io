@@ -22,6 +22,10 @@ layout: default
               on {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html
               content=page.content %}
             </span>
+            {% if page.paper %}
+            <br/>
+            <a style="color:#FFFFFF;" target="_blank" href="{{ page.paper }}">[Read the paper]</a>
+            {% endif %}
           </div>
         </div>
       </div>
