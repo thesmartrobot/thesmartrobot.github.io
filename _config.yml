@@ -7,7 +7,7 @@ url:                "https://thesmartrobot.github.io"
 
 
 # Add your google-analytics ID here to activate google analytics
-#google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+google_analytics:   UA-5683118-8
 
 # Build settings
 markdown:           kramdown
