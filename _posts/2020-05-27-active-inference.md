@@ -56,7 +56,7 @@ The crucial part of all this is that active inference and the Free Energy princi
 
 - How does one evaluate the potentially infinite amount of potential actions an agent can do in the world, to actually find those optimal actions that minimize the Free Energy?
 
-These three questions are what drivers our research, and you will read a lot more about that in the coming posts.
+These three questions are what drives our research, and you will read a lot more about that in the coming posts.
 
 
 [^1]: [Karl Friston, Thomas FitzGerald, Francesco Rigoli, Philipp Schwartenbeck, John O'Doherty, Giovanni Pezzulo, Active inference and learning, Neuroscience & Biobehavioral Reviews, 2016](https://doi.org/10.1016/j.neubiorev.2016.06.022){:target='_blank'}.
