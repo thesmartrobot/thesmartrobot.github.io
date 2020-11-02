@@ -22,8 +22,8 @@ Minimizing surprise then boils down to optimizing parameters $$\xi$$,$$\phi$$ an
 $$
 \begin{equation}
    \label{eq:model-obj}
-   \forall t : \underset{\phi, \theta, \xi}{\text{minimise}}: -\log p_\xi(\vo_t \vert \vs_t)
-   + \KL (q_\phi(\vs_t \vert \vs_{t-1}, \va_{t-1}, \vo_{t}) \Vert p_\theta(\vs_{t} \vert \vs_{t-1}, \va_{t-1}))
+   \forall t : \underset{\phi, \theta, \xi}{\text{minimise}}: -\log p_\xi(\mathbf{o}_t \vert \mathbf{s}_t)
+   + \KL (q_\phi(\mathbf{s}_t \vert \mathbf{s}_{t-1}, \mathbf{a}_{t-1}, \mathbf{o}_{t}) \Vert p_\theta(\mathbf{s}_{t} \vert \mathbf{s}_{t-1}, \mathbf{a}_{t-1}))
 \end{equation}
 $$
 
