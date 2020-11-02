@@ -59,6 +59,6 @@ We believe generative world models are indispensible for developing artificial i
 
 [^1]: [Ozan Çatal, Samuel Wauthier, Tim Verbelen, Cedric De Boom, Bart Dhoedt, Deep Active Inference for Autonomous Robot Navigation, BAICS workshop at ICLR, 2020](https://arxiv.org/abs/2003.03220){:target='_blank'}.
 
-[^1]: [Ozan Çatal, Sam Leroux, Cedric De Boom, Tim Verbelen and Bart Dhoedt, Anomaly Detection for Autonomous Guided Vehicles using Bayesian Surprise, IROS, 2020](https://ras.papercept.net/proceedings/IROS20/0143.pdf){:target='_blank'}.
+[^2]: [Ozan Çatal, Sam Leroux, Cedric De Boom, Tim Verbelen and Bart Dhoedt, Anomaly Detection for Autonomous Guided Vehicles using Bayesian Surprise, IROS, 2020](https://ras.papercept.net/proceedings/IROS20/0143.pdf){:target='_blank'}.
 
 
