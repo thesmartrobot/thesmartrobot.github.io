@@ -23,7 +23,7 @@ $$
 \begin{equation}
    \label{eq:model-obj}
    \forall t : \underset{\phi, \theta, \xi}{\text{minimise}}: -\log p_\xi(\mathbf{o}_t \vert \mathbf{s}_t)
-   + \KL (q_\phi(\mathbf{s}_t \vert \mathbf{s}_{t-1}, \mathbf{a}_{t-1}, \mathbf{o}_{t}) \Vert p_\theta(\mathbf{s}_{t} \vert \mathbf{s}_{t-1}, \mathbf{a}_{t-1}))
+   + D_{\mathrm{KL}} (q_\phi(\mathbf{s}_t \vert \mathbf{s}_{t-1}, \mathbf{a}_{t-1}, \mathbf{o}_{t}) \Vert p_\theta(\mathbf{s}_{t} \vert \mathbf{s}_{t-1}, \mathbf{a}_{t-1}))
 \end{equation}
 $$
 
