@@ -1,9 +1,11 @@
-title:              The Smart Robot
+title:              The Smart Robot 
 email:              <firstname>.<name>@ugent.be
 description:        Crucially, reading this blog will reduce your Free Energy.
 author:             Tim Verbelen, Ozan Catal, Toon Van de Maele
 baseurl:            ""
 url:                "https://thesmartrobot.github.io"
+twitter:
+  username: thesmartrobot
 
 
 # Add your google-analytics ID here to activate google analytics
@@ -17,3 +19,4 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-seo-tag
