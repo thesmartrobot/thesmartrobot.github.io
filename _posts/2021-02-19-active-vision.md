@@ -39,8 +39,7 @@ Intuitively this equation can be dissected in an epistemic and an instrumental t
 
 From the equation of G, it is clear that two elements are crucial in computing the expected free energy: a belief over the environment and the ability to imagine what will be observed.  Similar to the blog post on [robot imaginations](https://thesmartrobot.github.io/2020/08/13/robot-navigation.html), we learn a generative model by minimizing its surprise from prerecorded sequences to do just that. 
 
-As we consider the world to be unchanging, the model is slightly different from the previous post. The generative model consists of a posterior model that estimates the belief p(s\|o) over the environment from a sequence of observations, and a likelihood model that estimates the most likely observation to encounter when visiting a potential viewpoint. In the video below, you can see imaginative movement of the robotic gripper in correspondence to the scene show on the right. 
-
+As we consider the world to be unchanging, the model is slightly different from the previous post. The generative model consists of a posterior model that estimates the belief p(s\|o) over the environment from a sequence of observations, and a likelihood model that estimates the most likely observation to encounter when visiting a potential viewpoint. In the video below, you can see imaginative movement of the robotic gripper after scanning the scene shown on the right. 
 
 <table>
 <tr>
@@ -55,6 +54,13 @@ Your browser does not support the video tag.
 </td>
 </tr>
 </table>
+
+Also, the model will integrate information as new views are collected. For example in the next video, you see how various viewpoints are imagined as more observations are gathered. Before the initial observation, the robot has no idea about the scene and will imagine random objects. After the first observation, the model roughly encodes the location of one blue and two yellow objects. The more observations are integrated, the better the model encodes the position and shape of the different objects in the scene.
+
+<video width="640" height="320" controls>
+  <source src="/video/04_reconstructions.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
 
 <br/>
 ## Emerging behaviour
