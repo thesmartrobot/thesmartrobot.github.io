@@ -41,12 +41,20 @@ From the equation of G, it is clear that two elements are crucial in computing t
 
 As we consider the world to be unchanging, the model is slightly different from the previous post. The generative model consists of a posterior model that estimates the belief p(s\|o) over the environment from a sequence of observations, and a likelihood model that estimates the most likely observation to encounter when visiting a potential viewpoint. In the video below, you can see imaginative movement of the robotic gripper in correspondence to the scene show on the right. 
 
+
+<table>
+<tr>
+<td>
 <video width="320" height="320" controls>
   <source src="/video/04_robot_imaginations.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video> 
-
+</td>
+<td>
 <img width="320" height="320" src="/img/04_scene.jpeg">
+</td>
+</tr>
+</table>
 
 <br/>
 ## Emerging behaviour
