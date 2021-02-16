@@ -65,7 +65,7 @@ Your browser does not support the video tag.
 <br/>
 ## Emerging behaviour
 
-When we limit the robotic agent in height, we observe exploring behavior that scans the environment until it has found the target cube. This target is provided to the agent only as an observation.
+When we limit the robotic agent in height, we observe exploring behavior that scans the environment until it has found the target cube. This target is provided to the agent only as an observation. For example in the video below, the robot first moves to a different part of the scene to find yellow objects. Once these are spotted, it can infer the target pose, and moves to that particular location.
 
 <video width="640" height="132" controls>
   <source src="/video/04_active_vision_2d.mp4" type="video/mp4">
