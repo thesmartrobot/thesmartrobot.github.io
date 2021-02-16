@@ -35,7 +35,6 @@ $$
 
 Intuitively this equation can be dissected in an epistemic and an instrumental term. The epistemic term computes how much the belief over the environment will change when visiting this novel viewpoint, and thus is a quantification of how much the robot can learn by moving to this position. The instrumental term, on the other hand, reflects how close the expected observation is to the target view the agent is trying to reach. 
 
-
 ## Generative Model
 
 From the equation of G, it is clear that two elements are crucial in computing the expected free energy: a belief over the environment and the ability to imagine what will be observed.  Similar to the blog post on [robot imaginations](https://thesmartrobot.github.io/2020/08/13/robot-navigation.html), we learn a generative model by minimizing its surprise from prerecorded sequences to do just that. 
@@ -47,7 +46,9 @@ As we consider the world to be unchanging, the model is slightly different from 
 Your browser does not support the video tag.
 </video> 
 
+<img width="320" height="320" src="/img/04_scene.jpeg">
 
+<br/>
 ## Emerging behaviour
 
 When we limit the robotic agent in height and provide no preferred observation, we observe exploring behavior that scans the environment until it has found the target cube. This target is provided to the agent only as an observation. 
@@ -64,6 +65,7 @@ In a second experiment, we lift this limitation and allow the robotic agent to m
 Your browser does not support the video tag.
 </video> 
 
+<br/>
 ## Potential
 
 The results for this paper show that we can create an intelligent robot that is able to search a real workspace using a learnt generative model using a generic objective. The fact that this objective works using only the imagined transition of belief over the environment and its corresponding observations after selecting a new viewpoint or action show that this approach could easily be extended to more complex use cases with a different generative model. If this model is complex and accurate enough to properly predict the outcome for a large set of possible actions, it could, for example, do manipulation tasks when provided with only a view of the desired solution. 
