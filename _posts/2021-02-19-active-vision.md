@@ -7,9 +7,9 @@ background: '/img/bg-franka.png'
 paper: https://www.frontiersin.org/articles/10.3389/fnbot.2021.642780
 ---
 
-In the case that a robots needs to manipulate, find, or do anything useful, it first needs to localize its target. Living organisms do this by first exploring the area in a seemingly intelligent manner, choosing locations they have not yet visited. When we are searching for something and find a cue that could potentially lead to the solution, we, like any other organism, will investigate this further to evaluate whether this leads to our target. As this is a logical approach to searching we ask the question: “Can we mimic this exploratory behaviour by driving viewpoint selection through the active inference paradigm?” 
+In the case that a robots needs to manipulate, find, or do anything useful, it first needs to localize its target. Living organisms do this by first exploring the area in a seemingly intelligent manner, choosing locations they have not yet visited. When we are searching for something and find a cue that could potentially lead to the solution, we, like any other organism, will investigate this further to evaluate whether this leads to our target. As this is a logical approach to searching, we ask the question: “Can we mimic this exploratory behaviour by driving viewpoint selection through the active inference paradigm?” 
 
-We try to answer this question using a simulated robot manipulator in a workspace with varying shapes of different color in which the robot is tasked to find a single object.
+We try to answer this question using a simulated robot manipulator in a workspace with blocks of varying shapes and colors in which the robot is tasked to find a single object.
 
 
 ## Expected Free Energy
@@ -33,7 +33,7 @@ $$
 $$
 
 
-Intuitively this equation can be dissected in an epistemic and an instrumental term. The epistemic term computes how much the belief over the environment will change when visiting this novel viewpoint, and thus is a quantification of how much the robot can learn by moving to this position. The instrumental term, on the other hand, reflects how close the expected observation is to the target view the agent is trying to reach. 
+Intuitively, this equation can be dissected in an epistemic and an instrumental term. The epistemic term computes how much the belief over the environment will change when visiting this novel viewpoint, and thus is a quantification of how much the robot can learn by moving to this position. The instrumental term, on the other hand, reflects how close the expected observation is to the target view the agent is trying to reach. 
 
 ## Generative Model
 
@@ -72,7 +72,7 @@ When we limit the robotic agent in height, we observe exploring behavior that sc
 Your browser does not support the video tag.
 </video> 
 
-In a second experiment, we lift this limitation and allow the robotic agent to move in all three degrees of freedom. Not only does the agent reach its target faster than before, it moves upwards to acquire a broader scan of the environment, similar to how owls move to a high vantage point to scavenge for their prey. 
+In a second experiment, we lift this limitation and allow the robotic agent to move in all three degrees of freedom. Not only does the agent reach its target faster than before, it also first moves upwards to acquire a broader scan of the environment, similar to how owls move to a high vantage point to scavenge for their prey.
 
 <video width="640" height="132" controls>
   <source src="/video/04_active_vision.mp4" type="video/mp4">
