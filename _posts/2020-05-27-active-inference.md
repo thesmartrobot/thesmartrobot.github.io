@@ -17,27 +17,27 @@ Active inference is a general principle by which autonomous, intelligent agents 
 
 ## The Generative Model
 
-In order to deliberately choose its next action, an agent needs to plan ahead its course of actions and their effect. This entails building an internal model of the external world, and linking causes to their effects. The agent uses this model to infer beliefs over the state its environment is in, and to predict future sensory observations that result from certain actions. We call this a generative model as it allows the agent to *generate* possible percepts in the future.   
+In order to deliberately choose its next action, an agent needs to plan ahead its course of actions and their effect. This entails building an internal model of the external world, and linking causes to their effects. The agent uses this model to infer beliefs over the state its environment is in, and to predict future sensory observations that result from certain actions. We call this a generative model as it allows the agent to *generate* possible percepts in the future.
 
 
 ## Free Energy
 
-Active inference rests upon the Free Energy principle, which basically posits that in order to exist, an entity needs to minimize its Free Energy, or, simply put, its prediction error or surprise. In the context of our agent, this boils down to making sure that what it perceives is close to what was predicted by its generative model. 
+Active inference rests upon the Free Energy principle, which basically posits that in order to exist, an entity needs to minimize its Free Energy, or, simply put, its prediction error or surprise. In the context of our agent, this boils down to making sure that what it perceives is close to what was predicted by its generative model.
 
 Basically, an agent has two ways to minimize its Free Energy. On the one hand, the agent can update its generative model to better match the sensory observations it has experienced through the course of its lifetime. This entails learning how the world works, and learning how actions can affect the world, hence minimizing the prediction error. On the other hand, the agent can select the actions that will most likely yield observations that conform with its generative model. For example the agent will avoid ambiguous states, and will be attracted to following kind of habits for which it *knows* that they will have a certain effect. In this regard, planning becomes an inference problem: infer the actions that will yield the minimal Free Energy, hence *active* inference.
 
 
-## What do you believe about yourself?    
+## What do you believe about yourself?
 
 Crucially, the generative model is not only made up by past experiences. It also constitutes a prior about what you believe you are, what your goal and preferences are. This means that a priori, your generative model assumes you will reach your goals and preferences, and consequently, you will infer actions that in the end realize these goals, by active inference. Therefore, by equipping an agent with a prior model about its goals and engaging it in active inference, it will ultimately select the actions that guide it to this goal, much like a self-fulfilling prophecy. Of course, while doing so, the agent will keep reducing its Free Energy by resolving uncertainty, avoiding ambiguity, and learning about its environment.
 
 
 ## The Math
 
-The beauty of the active inference framework is that you can actually right it down in math. For example Free Energy $$F$$ can be written down as the difference of the log probability of an approximate posterior distribution Q and the joint probability distribution of observations $$\tilde{\textbf{o}}$$, hidden states $$\tilde{\textbf{s}}$$ and the followed policy $$\pi$$ (i.e. sequence of actions). 
+The beauty of the active inference framework is that you can actually write it down in math. For example Free Energy $$F$$ can be written down as the difference of the log probability of an approximate posterior distribution Q and the joint probability distribution of observations $$\tilde{\textbf{o}}$$, hidden states $$\tilde{\textbf{s}}$$ and the followed policy $$\pi$$ (i.e. sequence of actions).
 
 $$
-\begin{equation} 
+\begin{equation}
   \begin{split}
     F &= \mathbb{E}_{Q}[\log Q(\tilde{\textbf{s}}) - \log P(\tilde{\textbf{o}}, \tilde{\textbf{s}}, \pi)] \\
       &= \mathrm{D}_{KL}[Q(\tilde{\textbf{s}})||P(\tilde{\textbf{s}}, \pi | \tilde{\textbf{o}})] - \log P(\tilde{\textbf{o}})
