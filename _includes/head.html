@@ -30,11 +30,16 @@
 
   {% if page.image %}
     <meta content="{{ site.url }}{{ page.image }}" property="og:image">
+    <meta content="{{ site.url }}{{ page.image }}" name="twitter:image">
   {% else %}
     <meta content="{{ site.url }}{{ page.background }}" property="og:image">
+    <meta content="{{ site.url }}{{ page.background }}" name="twitter:image">
   {% endif %}
 
   {% if page.video %}
     <meta content="{{ site.url }}{{ page.video }}" property="og:video">
+    <meta content="{{ site.url }}{{ page.video }}" name="twitter:player">
+    <meta content="640" name="twitter:player:width">
+    <meta content="480" name="twitter:player:height">
   {% endif %}
 </head>
