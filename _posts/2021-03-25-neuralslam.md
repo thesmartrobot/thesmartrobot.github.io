@@ -34,8 +34,12 @@ The problem with this model is that the robot is unaware of the layout of the wo
 ## In practice
 We tested our latentSLAM model on pre-recorded sequences captured in our [lab](https://thesmartrobot.github.io/datasets).
 
-<img src=/img/05_iiot_tracks.png style="width:80%" />
-
+<figure style="text-align:center">
+    <img src="/img/05_iiot_tracks.png" style="width:80%">
+    <figcaption>
+    <emph>Our Lab</emph>
+    </figcaption>
+</figure>
 
  As can be seen in the video’s below our LatentSLAM model creates a map that resembles the ground-truth map very closely even though the mapping is purely topological. The usage of latent space samples greatly reduces the memory footprint of the map, making it better suited for long running experiments.
 
