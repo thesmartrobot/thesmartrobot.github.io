@@ -27,4 +27,14 @@
   </script>
 
   {% seo %}
+
+  {% if page.image %}
+    <meta content="{{ site.url }}{{ page.image }}" property="og:image">
+  {% else %}
+    <meta content="{{ site.url }}{{ page.background }}" property="og:image">
+  {% endif %}
+
+  {% if page.video %}
+    <meta content="{{ site.url }}{{ page.video }}" property="og:video">
+  {% endif %}
 </head>

@@ -5,6 +5,7 @@ subtitle: "Biologically plausible learned SLAM"
 author: "Ozan Catal"
 background: '/img/bg-turtles.png'
 paper: https://arxiv.org/abs/2105.03265
+video: /video/05_ICRA.mp4
 ---
 Moving from place to place comes without thinking for humans, yet it is something robots continue to struggle with for decades. While there have been tremendous advances in the field of SLAM (simultaneous localisation and mapping, the field that concerns itself with robotic navigation) current approaches still fail to produce stable maps that can be utilised for a long time. We propose a first step towards combining biologically plausible SLAM systems (i.e. RatSLAM) with deep learning systems such as our neuroscience-inspired dynamics model. RatSLAM distinguishes itself from other more traditional SLAM algorithms in three ways. 
 1. It is fully based on a model of how a rat represents the space and its location therein. 
