@@ -23,7 +23,7 @@ Based on this we can define a generative model for an agent navigating its envir
 
 We extend this model in two ways. First, we assume part of the state must somehow encode the agent's pose $$\tilde{\textbf{p}}$$ in the world, similar to the grid and head direction cells mentioned earlier. Second, we add a level of hierarchy in which the agent can reason on a more coarse-grained level about the world, as moving from location to location. At this level, the agent forms believes over it's current location $$\tilde{\textbf{l}}$$, and can perform a move $$\tilde{\textbf{m}}$$ to another location. The location of the agent will determine the low level state $$\tilde{\textbf{s}}$$, and vice versa the low level state will provide evidence for the agent to infer its current location.
 
-<img src="/img/06_model.png">
+<img width="640" src="/img/06_model.png">
 
 ## Hierarchical active inference
 
