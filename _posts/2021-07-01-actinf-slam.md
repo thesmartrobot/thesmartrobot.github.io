@@ -4,6 +4,7 @@ title: "SLAM as hierarchical active inference"
 subtitle: "Why animals can navigate but robots still struggle"
 author: "Tim Verbelen"
 background: '/img/bg-turtles.png'
+image: '/img/06_model.png'
 paper: https://doi.org/10.1016/j.neunet.2021.05.010
 ---
 
