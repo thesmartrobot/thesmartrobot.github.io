@@ -41,7 +41,7 @@ In case none of the CCNs activate for a certain object category, this means this
 
 ## How can this representation be useful for control?
 
-In our experiments, we trained CCNs for nine different objects from the YCB dataset [^4] in a simulated environment. For each object, a prerecorded dataset is created in which the object is observed from different camera poses. The separate CCNs are then trained on their corresponding dataset. After training, CCNs can imagine how objects would look like from different viewpoints, by traversing the latent space representing the object pose. (top: initial view, bottom: imagined trajectory): 
+In our experiments, we trained CCNs for different objects from the YCB dataset [^4] in a simulated environment. For each object, a prerecorded dataset is created in which the object is observed from different camera poses. The separate CCNs are then trained on their corresponding dataset. After training, CCNs can imagine how objects would look like from different viewpoints, by traversing the latent space representing the object pose. (top: initial view, bottom: imagined trajectory): 
 
 <video width="640" height="127" controls loop autoplay>
   <source src="/video/07_ccn_imagined.mp4" type="video/mp4">
