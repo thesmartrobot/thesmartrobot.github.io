@@ -41,16 +41,16 @@ In case none of the CCNs activate for a certain object category, this means this
 
 ## How can this representation be useful for control?
 
-In our experiments, we trained CCNs for nine different objects from the YCB dataset [^4] in a simulated environment. For each object, a prerecorded dataset is created in which the object is observed from different camera poses. The separate CCNs are then trained on their corresponding dataset. After training, CCNs can imagine how objects would look like from different viewpoints, by traversing the latent space representing the object pose. (left: initial view, right: imagined trajectory): 
+In our experiments, we trained CCNs for nine different objects from the YCB dataset [^4] in a simulated environment. For each object, a prerecorded dataset is created in which the object is observed from different camera poses. The separate CCNs are then trained on their corresponding dataset. After training, CCNs can imagine how objects would look like from different viewpoints, by traversing the latent space representing the object pose. (top: initial view, bottom: imagined trajectory): 
 
-<video width="640" height="127" controls loop>
+<video width="640" height="127" controls loop autoplay>
   <source src="/video/07_ccn_imagined.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
-Besides inferring the object pose, a CCN can also be used to infer the actions that bring the camera towards a certain preferred viewpoint. This can for example be used to move a robot manipulator towards an object in a certain graspable pose (left: initial observation, middle: target pose, right: estimated trajectory): 
+Besides inferring the object pose, a CCN can also be used to infer the actions that bring the camera towards a certain preferred viewpoint. This can for example be used to move a robot manipulator towards an object in a certain graspable pose (top: initial observation, middle: target pose, bottom: estimated trajectory): 
 
-<video width="640" height="192" controls loop>
+<video width="640" height="192" controls loop autoplay>
   <source src="/video/07_ccn_pose_estimation.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
