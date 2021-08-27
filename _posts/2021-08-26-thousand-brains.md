@@ -4,7 +4,7 @@ title: "Cortical Column Networks"
 subtitle: "A Thousand Brains inspired approach to object representation learning"
 author: "Toon Van de Maele"
 background: '/img/bg-franka.png'
-#paper: https://arxiv.org/abs/<tbd>
+paper: http://arxiv.org/abs/2108.11762
 video: /video/07_ccn_imagined.mp4
 ---
 
@@ -29,7 +29,7 @@ Inspired by Thousand Brains Theory, we adopt he following take-aways. First, our
 
 In our case, we propose a Cortical Column Network (CCN) as a basic building block, which learns object representations from camera input (i.e. pixels). Crucially, we can move our camera around, querying novel viewpoints of the object at hand. For each novel object category, we create a novel CCN, which is trained to predict both the object identity and a pose in an object-centric reference frame, by predicting novel views after moving the camera. This is consistent with the two-stream hypothesis of visual information processing in the brain using a dorsal and a ventral stream that distinctly represent the object pose and identity [^2]. Hence, the model CCN is optimized according to the Free Energy Principle [^3], in which the CCN infers a posterior belief over object identity and pose, and is trained to minimize surprise. It is important to note that the object pose is encoded in an abstract, learnt latent space, making it a true, object-centric reference frame.
 
-For more details on the CCN architecture and training method, we refer the interested reader to the paper. 
+For more details on the CCN architecture and training method, we refer the interested reader to [the paper](http://arxiv.org/abs/2108.11762){:target='_blank'}. 
 
 
 ## You mentioned something about voting?
