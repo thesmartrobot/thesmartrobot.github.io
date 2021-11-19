@@ -104,7 +104,7 @@ We also found Contrastive Active Inference allows to succesfully control a robot
   <img width="25%" src="/img/08_easy_cut.gif">
   <img width="25%" src="/img/08_hard_cut.gif">
 </div>
-<br/>
+\
 
 ## Complex Backgrounds
 
@@ -122,7 +122,7 @@ In particular, the Contrastive Active Inference method is able to achieve the ta
   <img width="20%" src="/img/08_boxe_cut.gif">
   <img width="20%" src="/img/08_pole_cut.gif">
 </div>
-<br/>
+\
 
 ## Future Perspectives
 
