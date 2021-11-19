@@ -4,6 +4,7 @@ title: "Contrastive Active Inference"
 subtitle: "Visual control with Active Inference and Contrastive Learning"
 author: "Pietro Mazzaglia"
 background: '/img/bg-reacher.gif'
+image: '/img/08_contrastive_planning.png'
 paper: https://arxiv.org/abs/2110.10083
 ---
 
