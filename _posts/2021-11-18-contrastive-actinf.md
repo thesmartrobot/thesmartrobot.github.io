@@ -27,7 +27,7 @@ Significantly easier! But satisfying preferences in high-dimensional spaces, suc
 
 For instance, imagine we want a robotic arm to reach a red sphere goal:
 
-<div style="display:flex, justify-content: center">
+<div style="display:flex;justify-content: center;">
   <img width="25%" src="/img/08_reacher_easy_13.png">
 </div>
 
@@ -35,7 +35,7 @@ The image of the arm achieving the task could represent the preference of the ro
 
 Now, let's compare the distance between the goal image and two potential images from the environment. The first case is the goal image with some added random noise. The second image is an image the robot arm in a wrong pose, that doesn't accomplish the task.
 
-<div style="display:flex, justify-content: center">
+<div style="display:flex;justify-content: center;">
   <img width="25%" src="/img/08_reacher_easy_13_noise.png">
   <img width="25%" src="/img/08_reacher_easy_13_wrong.png">
 </div>
@@ -52,7 +52,7 @@ Contrastive Learning is a method to learn representations based upon similarity.
 
 The choice of what is similar and dissimilar depends of course on the task. We could for instance desire a representation where objects with same colors are similar, and objects with different colors are dissimilar.
 
-<div style="display:flex, justify-content: center">
+<div style="display:flex;justify-content: center;">
   <img width="100%" src="/img/08_contrastive_pairs.png">
 </div>
 
@@ -69,7 +69,7 @@ In Active Inference, the brain first learns a model of the environment. This mod
 In our method, the compact representation for the world model is, instead, learned by minimizing *contrastive free energy*. The model learns to associate the state of the environment's representation with the corresponding visual observation, while also making the state representation as distinct as possible from the other images. Similar and dissimilar pairs are selected contrasting observations across time and across different behavioral sequences.
 
 
-<div style="display:flex, justify-content: center">
+<div style="display:flex;justify-content: center;">
   <img width="80%" src="/img/08_contrastive_model.png">
 </div>
 
@@ -78,7 +78,7 @@ With respect to future actions, in Active Inference, we aim to find actions that
 In the Contrastive Active Inference framework, the agent select actions that minimize *contrastive free energy* by searching for actions that will lead the agent in states that have the highest similarity with preferences, while avoiding states that correspond to different images.
 
 
-<div style="display:flex, justify-content: center">
+<div style="display:flex;justify-content: center;">
   <img width="80%" src="/img/08_contrastive_planning.png">
 </div>
 
@@ -90,7 +90,7 @@ We tested our method for visual control in different environments, interested in
 
 Working in a [Minigrid world](https://github.com/maximecb/gym-minigrid) visual task, we trained an agent (red arrow) to reach a goal (green tile) in a black grid. To comprehend how each method encourages to reach the goal, it is useful to look how the learning signal provided for each tile of the grid looks like for the different approaches.
 
-<div style="display:flex, justify-content: center">
+<div style="display:flex;justify-content:center;">
   <img width="80%" src="/img/08_grid_task.png">
 </div>
 
@@ -100,7 +100,7 @@ This suggests that the contrastive mechanism assigns higher values to concepts t
 
 We also found Contrastive Active Inference allows to succesfully control a robotic arm on a plane to reach a goal (red sphere). 
 
-<div style="display:flex, justify-content: centerpadding: 0px 0px 10px 0px">
+<div style="display:flex;justify-content:center;padding: 0em 0em 1em 0em;">
   <img width="25%" src="/img/08_easy_cut.gif">
   <img width="25%" src="/img/08_hard_cut.gif">
 </div>
@@ -115,7 +115,7 @@ We found that both reward-driven methods and active-inference methods work when 
 
 In particular, the Contrastive Active Inference method is able to achieve the task being provide the same goal image used for the simpler task, with no varying background (i.e. the original one with the blue blackground). This means that the contrastive mechanism allows to ignore the differences in the background, favouring the imitation of the pose despite all the variations and complexities of the environment.
 
-<div style="display:flex, justify-content: center, padding: 0px 0px 10px 0px">
+<div style="display:flex;justify-content:center;padding: 0em 0em 1em 0em;">
   <img width="20%" src="/img/08_bear_cut.gif">
   <img width="20%" src="/img/08_boat_cut.gif">
   <img width="20%" src="/img/08_boxe_cut.gif">
