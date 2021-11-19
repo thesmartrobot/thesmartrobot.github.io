@@ -100,11 +100,10 @@ This suggests that the contrastive mechanism assigns higher values to concepts t
 
 We also found Contrastive Active Inference allows to succesfully control a robotic arm on a plane to reach a goal (red sphere). 
 
-<div style="display:flex, justify-content: center">
+<div style="display:flex, justify-content: centerpadding: 0px 0px 10px 0px">
   <img width="25%" src="/img/08_easy_cut.gif">
   <img width="25%" src="/img/08_hard_cut.gif">
 </div>
-&nbsp;
 
 ## Complex Backgrounds
 
@@ -116,13 +115,12 @@ We found that both reward-driven methods and active-inference methods work when 
 
 In particular, the Contrastive Active Inference method is able to achieve the task being provide the same goal image used for the simpler task, with no varying background (i.e. the original one with the blue blackground). This means that the contrastive mechanism allows to ignore the differences in the background, favouring the imitation of the pose despite all the variations and complexities of the environment.
 
-<div style="display:flex, justify-content: center">
+<div style="display:flex, justify-content: center, padding: 0px 0px 10px 0px">
   <img width="20%" src="/img/08_bear_cut.gif">
   <img width="20%" src="/img/08_boat_cut.gif">
   <img width="20%" src="/img/08_boxe_cut.gif">
   <img width="20%" src="/img/08_pole_cut.gif">
 </div>
-&nbsp;
 
 ## Future Perspectives
 
