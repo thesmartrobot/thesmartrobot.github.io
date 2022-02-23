@@ -17,7 +17,7 @@ In this post, we introduce **Latent Bayesian Surprise**, an objective that drive
 In control techniques, such as reinforcement learning, the utility value that the agent should maximize to perform a task is distributed across the environment. In some cases, this signal is densely provided for all states and actions encountered. However, in other cases, the signal may be very sparse, only providing the agent with a feedback signal when it is relatively close to accomplishing the task. An example is shown below with respect to the Mountain Car environment.
 
 <div style="display:flex; justify-content: center;">
-  <img alt="dense and sparse rewards in mountain car" width="80%" src="../img/09_dense_sparse.jpg">
+  <img alt="dense and sparse rewards in mountain car" width="80%" src="/img/09_dense_sparse.jpg">
 </div>
 
 The agent can receive a signal that progressively drives it towards the goal at top of the right hill, as show on the left, or being rewarded only when reaching the top, as on the right. The problem in the second scenario is that, if the agent doesn't know where to go, it may easily get stuck at the bottom of the valley and fail the task.
@@ -31,7 +31,7 @@ The solution is _exploration_! Agents should try out different actions and reach
 Bayesian surprise is an information measure to quantify how some data affects the agent's knowledge, by measuring differences between posterior and prior beliefs of the agent, i.e. the difference in the agent's knowledge after versus before observing the data. Another way to talk about Bayesian surprise is in terms of [information gain](https://en.wikipedia.org/wiki/Mutual_information). Bayesian surprise assesses how much information is gained by the agent by observing the data. An example in a simplified 2D Minecraft world is provided below.
 
 <div style="display:flex; justify-content: center;">
-  <img alt="information gain illustration on in a 2D Minecraft world" width="80%" src="../img/09_info_gain.png">
+  <img alt="information gain illustration on in a 2D Minecraft world" width="80%" src="/img/09_info_gain.png">
 </div>
 
 Initially, the agent knows there is a treasure in one of the boxes but it does not know in which one. If the agent gets only one chance to open a box, randomly picking is not the optimal way to act. Luckily there is a map that tells exactly which box contains the treasure. The agent may want to first go there, gaining information that reduces the uncertainty of its beliefs about the boxes, and then directly go for the right box. 
@@ -50,13 +50,13 @@ The agent's model is made of three main components (the subscripts $t$ and $t+1$
 An illustration of the model is presented below:
 
 <div style="display:flex; justify-content: center;">
-  <img alt="latent bayesian surprise - dynamics model learned by the agent" width="65%" src="../img/09_lbs_model.jpg">
+  <img alt="latent bayesian surprise - dynamics model learned by the agent" width="65%" src="/img/09_lbs_model.jpg">
 </div>
 
 Thanks to defining this model, and, crucially, the latent variable $z$, it is now possible to compute the information gained about the latent variable, when collecting new information about the environment state. We define the Latent Bayesian Surprise (LBS) signal as:
 
 <div style="display:flex; justify-content: center;">
-  <img alt="latent bayesian surprise - dynamics model learned by the agent" width="100%" src="../img/09_lbs_bonus.jpg">
+  <img alt="latent bayesian surprise - dynamics model learned by the agent" width="100%" src="/img/09_lbs_bonus.jpg">
 </div>
 
 that translates the information gain term into the [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) between the distribution of the latent posterior, which has access to the information in $s_{t+1}$, compared to the latent prior distribution. By maximizing Latent Bayesian Surprise, the agent looks for states of the environment that will inform better the latent model it has learned. Our method is based on curiosity in that the agent will search for interesting interactions that should increase its knowledge and reduce uncertainty about the environment. 
@@ -70,7 +70,7 @@ We tested our method for exploration and curiosity in a wide variety of tasks.
 In a set of continuous control tasks, we find that our agent consistently explores more states of the environment than other exploration approaches:
 
 <div style="display:flex; justify-content: center;">
-  <img alt="exploration in terms of states percentage" width="100%" src="../img/09_continuous.png">
+  <img alt="exploration in terms of states percentage" width="100%" src="/img/09_continuous.png">
 </div>
 
 We obtained outstanding results in some arcade games, where our agent is able to play by just using its curiosity signal (i.e. curious behaviour encourages playing). Some examples videos are shown below:
@@ -111,20 +111,20 @@ Finally, we experimented with the DM Control Suite, where we first collect data 
   <div style="display: inline-block; margin: 0 auto; width: 50%;">
     <div style='display: flex; justify-content: center; text-align: center;'>
         <div style="display: inline-block; margin: 0 auto; width: 50%;">
-            <img src="../img/09_hopper_hop_train.gif" alt="this slowpoke moves"  width="90%" />
+            <img src=./img/09_hopper_hop_train.gif" alt="this slowpoke moves"  width="90%" />
         </div>
         <div style="display: inline-block; margin: 0 auto; width: 50%;">
-            <img src="../img/09_walker_walk_train.gif" alt="this slowpoke moves"  width="90%" />
+            <img src="/img/09_walker_walk_train.gif" alt="this slowpoke moves"  width="90%" />
         </div>
     </div>
   </div>
   <div style="display: inline-block; margin: 0 auto; width: 50%;">
     <div style='display: flex; justify-content: center; text-align: center;'>
         <div style="display: inline-block; margin: 0 auto; width: 50%;">
-            <img src="../img/09_hopper_hop_eval.gif" alt="this slowpoke moves"  width="90%" />
+            <img src="/img/09_hopper_hop_eval.gif" alt="this slowpoke moves"  width="90%" />
         </div>
         <div style="display: inline-block; margin: 0 auto; width: 50%;">
-            <img src="../img/09_walker_walk_eval.gif" alt="this slowpoke moves"  width="90%" />
+            <img src="/img/09_walker_walk_eval.gif" alt="this slowpoke moves"  width="90%" />
         </div>
     </div>
   </div>
@@ -141,7 +141,7 @@ Our method, being driven by the principle of looking for interactions that bring
 
 
 <div style="display:flex; justify-content: center;">
-  <img alt="exploration in terms of states percentage" width="80%" src="../img/09_stochastic.png">
+  <img alt="exploration in terms of states percentage" width="80%" src="/img/09_stochastic.png">
 </div>
 
 Our method achieves the best performance in both variants of the environment. The other two approaches that are also resilient to stochasticity, [VIME](https://arxiv.org/abs/1605.09674) and [Disagreement](https://arxiv.org/abs/1906.04161), are also based upon information gain but over parameters, rather than in latent space. The other exploration strategies failed to explore consistently, as they got stuck in front of the "Noisy TV".
