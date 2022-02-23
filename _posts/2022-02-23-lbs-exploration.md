@@ -42,10 +42,10 @@ As can be seen on this figure, one may think of information gain or Bayesian sur
 
 In our work, we propose an exploration strategy based on Bayesian surprise. In order to compute the information gained by observing new data, the agent needs a model that provides beliefs about the environment. For this reason, we let the agent learn a *latent* (hidden/intermediate) probabilistic representation of the environment, which constitutes the agent's beliefs. 
 
-The agent's model is made of three main components (the subscripts $t$ and $t+1$ indicate time steps): 
-* a _reconstruction model_ $p(z_t|s_t)$, which maps latent beliefs $z_t$ to environment states $s_t$; 
-* a _latent prior_ $p(z_{t+1}|s_t, a_t)$, which predicts the next latent beliefs $z_{t+1}$ given the current information (state $s_t$ and the action taken $a_t$);
-* a _latent posterior_ $q(z_{t+1}|s_t, a_t, s_{t+1})$, which recognizes the true beliefs for the state $s_{t+1}$, given the additional information.
+The agent's model is made of three main components (the subscripts $$t$$ and $$t+1$$ indicate time steps): 
+* a _reconstruction model_ $$p(z_t|s_t)$$, which maps latent beliefs $$z_t$$ to environment states $$s_t$$; 
+* a _latent prior_ $$p(z_{t+1}|s_t, a_t)$$, which predicts the next latent beliefs $$z_{t+1}$$ given the current information (state $$s_t$$ and the action taken $$a_t$$);
+* a _latent posterior_ $$q(z_{t+1}|s_t, a_t, s_{t+1})$$, which recognizes the true beliefs for the state $$s_{t+1}$$, given the additional information.
 
 An illustration of the model is presented below:
 
@@ -53,13 +53,13 @@ An illustration of the model is presented below:
   <img alt="latent bayesian surprise - dynamics model learned by the agent" width="65%" src="/img/09_lbs_model.jpg">
 </div>
 
-Thanks to defining this model, and, crucially, the latent variable $z$, it is now possible to compute the information gained about the latent variable, when collecting new information about the environment state. We define the Latent Bayesian Surprise (LBS) signal as:
+Thanks to defining this model, and, crucially, the latent variable $$z$$, it is now possible to compute the information gained about the latent variable, when collecting new information about the environment state. We define the Latent Bayesian Surprise (LBS) signal as:
 
 <div style="display:flex; justify-content: center;">
   <img alt="latent bayesian surprise - dynamics model learned by the agent" width="100%" src="/img/09_lbs_bonus.jpg">
 </div>
 
-that translates the information gain term into the [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) between the distribution of the latent posterior, which has access to the information in $s_{t+1}$, compared to the latent prior distribution. By maximizing Latent Bayesian Surprise, the agent looks for states of the environment that will inform better the latent model it has learned. Our method is based on curiosity in that the agent will search for interesting interactions that should increase its knowledge and reduce uncertainty about the environment. 
+that translates the information gain term into the [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) between the distribution of the latent posterior, which has access to the information in $$s_{t+1}$$, compared to the latent prior distribution. By maximizing Latent Bayesian Surprise, the agent looks for states of the environment that will inform better the latent model it has learned. Our method is based on curiosity in that the agent will search for interesting interactions that should increase its knowledge and reduce uncertainty about the environment. 
 
 Note that reducing uncertainty is also a key aspect in active inference, which we introduced in [a previous post](https://thesmartrobot.github.io/2020/05/27/active-inference.html).
 
@@ -137,7 +137,7 @@ For more visual results, check out the [project page](https://lbsexploration.git
 
 Stochasticity, i.e. uncontrollable randomness in the environment, is an important issue to address when the agent is driven by curiosity. If the agent simply looks for areas of the environment that it can't accurately predict, it can get stuck in a stochastic noisy state, which constantly changes without bringing any important information for the task. This problem is known in literature as the ["Noisy TV" problem](https://arxiv.org/abs/0812.4360).
 
-Our method, being driven by the principle of looking for interactions that bring significant information to the agent's model, allows to overcome stochasticity, assuming that the latent variable $z$ (and so the model) ignores the meaningless noise. We also empirically show this in two variations of the Mountain Car problem, where the agent possesses a remote that triggers a "Noisy TV":
+Our method, being driven by the principle of looking for interactions that bring significant information to the agent's model, allows to overcome stochasticity, assuming that the latent variable $$z$$ (and so the model) ignores the meaningless noise. We also empirically show this in two variations of the Mountain Car problem, where the agent possesses a remote that triggers a "Noisy TV":
 
 
 <div style="display:flex; justify-content: center;">
