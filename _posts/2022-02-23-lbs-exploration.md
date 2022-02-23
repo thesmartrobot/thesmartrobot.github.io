@@ -14,13 +14,13 @@ In this post, we introduce **Latent Bayesian Surprise**, an objective that drive
 
 ## Why Exploration?
 
-In control techniques, such as reinforcement learning, the utility value that the agent should maximize to perform a task is distributed across the environment. In some cases, this signal is densely provided for all states and actions observed. However, in other cases, the signal may be strong enough to drive learning only when the agent is relatively close to accomplishing the task. An example is shown below with respect to the Mountain Car environment.
+In control techniques, such as reinforcement learning, the utility value that the agent should maximize to perform a task is distributed across the environment. In some cases, this signal is densely provided for all states and actions encountered. However, in other cases, the signal may be very sparse, only providing the agent with a feedback signal when it is relatively close to accomplishing the task. An example is shown below with respect to the Mountain Car environment.
 
 <div style="display:flex; justify-content: center;">
   <img alt="dense and sparse rewards in mountain car" width="80%" src="../img/09_dense_sparse.jpg">
 </div>
 
-The agent can receive a signal that progressively drives it towards the top of the right hill (its goal), as show on the left, or being rewarded only when reaching the top, as on the right. The problem in the second scenario is that, if the agent doesn't know where to go, it may easily get stuck at the bottom of the valley and fail the task.
+The agent can receive a signal that progressively drives it towards the goal at top of the right hill, as show on the left, or being rewarded only when reaching the top, as on the right. The problem in the second scenario is that, if the agent doesn't know where to go, it may easily get stuck at the bottom of the valley and fail the task.
 
  > How should agents find information that allows them to accomplish their tasks?
 
@@ -28,15 +28,15 @@ The solution is _exploration_! Agents should try out different actions and reach
 
 ## Bayesian Surprise
 
-Bayesian surprise is an information measure to quantify how some data affects the agent's knowledge, by measuring differences between prior and posterior beliefs of the agent, i.e. the difference in the agent's knowledge before and after observing the data. Another way to talk about Bayesian surprise is in terms of [information gain](https://en.wikipedia.org/wiki/Mutual_information). Bayesian surprise assesses how much information is gained by the agent by observing the data. An example in a simplified 2D Minecraft world is provided below.
+Bayesian surprise is an information measure to quantify how some data affects the agent's knowledge, by measuring differences between posterior and prior beliefs of the agent, i.e. the difference in the agent's knowledge after versus before observing the data. Another way to talk about Bayesian surprise is in terms of [information gain](https://en.wikipedia.org/wiki/Mutual_information). Bayesian surprise assesses how much information is gained by the agent by observing the data. An example in a simplified 2D Minecraft world is provided below.
 
 <div style="display:flex; justify-content: center;">
   <img alt="information gain illustration on in a 2D Minecraft world" width="80%" src="../img/09_info_gain.png">
 </div>
 
-Initially, the agent knows there's a treasure in one of the boxes but it doesn't which one has it. If the agent gets only shot to guess, randomly picking is not the optimal way to act. Luckily there's a map that tells exactly which box contains the treasure. The agent may want to first go there, gaining information that reduces the uncertainty of its beliefs about the boxes, and then directly go for the right box. 
+Initially, the agent knows there is a treasure in one of the boxes but it does not know in which one. If the agent gets only one chance to open a box, randomly picking is not the optimal way to act. Luckily there is a map that tells exactly which box contains the treasure. The agent may want to first go there, gaining information that reduces the uncertainty of its beliefs about the boxes, and then directly go for the right box. 
 
-As it visually emerges, one may think of information gain or Bayesian surprise as the extent to which the agent's beliefs distribution (e.g. about which box contains the treasure) becomes narrower with new data (e.g. the information from the map). A more in-depth analysis of Bayesian surprise can be found [here](https://papers.nips.cc/paper/2005/hash/0172d289da48c48de8c5ebf3de9f7ee1-Abstract.html).
+As can be seen on this figure, one may think of information gain or Bayesian surprise as the extent to which the agent's beliefs distribution (e.g. about which box contains the treasure) becomes narrower with new data (e.g. the information from the map). A more in-depth analysis of Bayesian surprise can be found [here](https://papers.nips.cc/paper/2005/hash/0172d289da48c48de8c5ebf3de9f7ee1-Abstract.html).
 
 ## Latent Bayesian Surprise
 
@@ -59,7 +59,7 @@ Thanks to defining this model, and, crucially, the latent variable $z$, it is no
   <img alt="latent bayesian surprise - dynamics model learned by the agent" width="100%" src="../img/09_lbs_bonus.jpg">
 </div>
 
-that translates the information gain term into the [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) (i.e. the distance) between the distribution of the latent posterior, which has access to the information in $s_{t+1}$, compared to the latent prior distribution. By maximizing Latent Bayesian Surprise, the agent looks for states of the environment that will inform better the latent model it has learned. Our method is based on curiosity in that the agent will search for interesting interactions that should increase its knowledge and reduce uncertainty about the environment. 
+that translates the information gain term into the [KL divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) between the distribution of the latent posterior, which has access to the information in $s_{t+1}$, compared to the latent prior distribution. By maximizing Latent Bayesian Surprise, the agent looks for states of the environment that will inform better the latent model it has learned. Our method is based on curiosity in that the agent will search for interesting interactions that should increase its knowledge and reduce uncertainty about the environment. 
 
 Note that reducing uncertainty is also a key aspect in active inference, which we introduced in [a previous post](https://thesmartrobot.github.io/2020/05/27/active-inference.html).
 
@@ -87,7 +87,7 @@ We obtained outstanding results in some arcade games, where our agent is able to
   </video> 
 </div>
 
-Finally, we experiment with the DM Control Suite, where we collected data by using exploration to then train agents offline on a given task, by using only the exploration data. In this experiment, we show that the data collected with our method allows for faster adaptation of the agent. Some examples are shown below:
+Finally, we experimented with the DM Control Suite, where we first collect data using our LBS exploring agent, and then train an offline RL agent using only the exploration data. In this experiment, we show that the data collected with our method allows for faster training of the RL agent. Some examples are shown below:
 
 <div style="display: flex; justify-content: center; text-align: center;">
   <div style="display: inline-block; margin: 0 auto; width: 50%;">
@@ -137,7 +137,7 @@ For more visual results, check out the [project page](https://lbsexploration.git
 
 Stochasticity, i.e. uncontrollable randomness in the environment, is an important issue to address when the agent is driven by curiosity. If the agent simply looks for areas of the environment that it can't accurately predict, it can get stuck in a stochastic noisy state, which constantly changes without bringing any important information for the task. This problem is known in literature as the ["Noisy TV" problem](https://arxiv.org/abs/0812.4360).
 
-Our method, being driven by the principle of looking for interactions that bring significant information to the agent's model, allows to overcome stochasticity, assuming that the latent variable $z$ (and so the model) ignores the meaningless noise. We also empirically show this in two variations of the Mountain Car problem, where the agent possesses a remote that triggers a (single pixel) "Noisy TV":
+Our method, being driven by the principle of looking for interactions that bring significant information to the agent's model, allows to overcome stochasticity, assuming that the latent variable $z$ (and so the model) ignores the meaningless noise. We also empirically show this in two variations of the Mountain Car problem, where the agent possesses a remote that triggers a "Noisy TV":
 
 
 <div style="display:flex; justify-content: center;">
@@ -148,8 +148,6 @@ Our method achieves the best performance in both variants of the environment. Th
 
 ## Future Perspectives
 
-The ability to resolve uncertainty in the environment is a fundamental ability in humans. Every time we need to do something, we tend to first secure that our actions will succeed, e.g. if you need to buy an object, you would first search online or ask around where is the nearest store that sells that object, rather than wandering until finding one.
+The ability to resolve uncertainty in the environment is a fundamental ability of humans. Every time we need to do something, we tend to first secure that our actions will succeed, e.g. if you need to buy a product, you would likely first search online or ask around to find the best store to buy it, rather than just wandering around until finding what you need.
 
-In a similar way, artificial agents should be curious and find relevant information in the environment by themselves. Exploration approaches such as Latent Bayesian Surprise, which shows outstanding performance across several tasks, are very important in this. Additionally, research should be careful about the Noisy TV problem. We find our method is resilient to simple artificial noise patterns; however, future studies should focus on studying how more complex stochasticity can affect exploration and to what extent current methods are robust.
-
-In the future, we also aim to investigate further on how to structure the latent representation of the model, e.g. using [contrastive learning approaches](https://thesmartrobot.github.io/2021/11/18/contrastive-actinf.html), in order to lead to more efficent and well-directed exploration. 
+In a similar way, artificial agents should be curious and find relevant information in the environment by themselves. Exploration approaches such as Latent Bayesian Surprise, which shows outstanding performance across several tasks, are very important in this. At the same time, research should be careful about the Noisy TV problem. Although we found our method to be resilient to simple artificial noise patterns, future studies should focus on studying how more complex stochasticity can affect exploration and to what extent current methods are robust. In addition, we also aim to investigate on how to further structure the latent representation of the model, e.g. using [contrastive learning approaches](https://thesmartrobot.github.io/2021/11/18/contrastive-actinf.html), in order to lead to more efficent and well-directed exploration. 
