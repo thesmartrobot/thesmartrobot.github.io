@@ -4,7 +4,7 @@ title: "Latent Bayesian Surprise"
 subtitle: "Curiosity-driven exploration by maximizing information gain"
 author: "Pietro Mazzaglia"
 background: '/img/bg-curiosity.gif'
-image: '/img/08_contrastive_planning.png'
+image: '/img/bg-curiosity.gif'
 paper: https://arxiv.org/abs/2104.07495
 ---
 
