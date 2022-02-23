@@ -43,9 +43,9 @@ As can be seen on this figure, one may think of information gain or Bayesian sur
 In our work, we propose an exploration strategy based on Bayesian surprise. In order to compute the information gained by observing new data, the agent needs a model that provides beliefs about the environment. For this reason, we let the agent learn a *latent* (hidden/intermediate) probabilistic representation of the environment, which constitutes the agent's beliefs. 
 
 The agent's model is made of three main components (the subscripts $$t$$ and $$t+1$$ indicate time steps): 
-* a _reconstruction model_ $$p(z_t &#124; s_t)$$, which maps latent beliefs $$z_t$$ to environment states $$s_t$$; 
-* a _latent prior_ $$p(z_{t+1} &#124; s_t, a_t)$$, which predicts the next latent beliefs $$z_{t+1}$$ given the current information (state $$s_t$$ and the action taken $$a_t$$);
-* a _latent posterior_ $$q(z_{t+1} &#124; s_t, a_t, s_{t+1})$$, which recognizes the true beliefs for the state $$s_{t+1}$$, given the additional information.
+* a _reconstruction model_ $$p(z_t \vert s_t)$$, which maps latent beliefs $$z_t$$ to environment states $$s_t$$; 
+* a _latent prior_ $$p(z_{t+1} \vert s_t, a_t)$$, which predicts the next latent beliefs $$z_{t+1}$$ given the current information (state $$s_t$$ and the action taken $$a_t$$);
+* a _latent posterior_ $$q(z_{t+1} \vert s_t, a_t, s_{t+1})$$, which recognizes the true beliefs for the state $$s_{t+1}$$, given the additional information.
 
 An illustration of the model is presented below:
 
