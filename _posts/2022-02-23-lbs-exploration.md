@@ -111,7 +111,7 @@ Finally, we experimented with the DM Control Suite, where we first collect data 
   <div style="display: inline-block; margin: 0 auto; width: 50%;">
     <div style='display: flex; justify-content: center; text-align: center;'>
         <div style="display: inline-block; margin: 0 auto; width: 50%;">
-            <img src=/img/09_hopper_hop_train.gif" alt="this slowpoke moves"  width="90%" />
+            <img src="/img/09_hopper_hop_train.gif" alt="this slowpoke moves"  width="90%" />
         </div>
         <div style="display: inline-block; margin: 0 auto; width: 50%;">
             <img src="/img/09_walker_walk_train.gif" alt="this slowpoke moves"  width="90%" />
