@@ -20,11 +20,11 @@ In control techniques, such as reinforcement learning, the utility value that th
   <img alt="dense and sparse rewards in mountain car" width="80%" src="/img/09_dense_sparse.jpg">
 </div>
 
-The agent can receive a signal that progressively drives it towards the goal at top of the right hill, as show on the left, or being rewarded only when reaching the top, as on the right. The problem in the second scenario is that, if the agent doesn't know where to go, it may easily get stuck at the bottom of the valley and fail the task.
+The agent can receive a signal that progressively drives it towards the goal at top of the right hill, as shown on the left, or can be rewarded only when reaching the top, as on the right. The problem in the second scenario is that, if the agent doesn't know where to go, it may easily get stuck at the bottom of the valley and fail the task.
 
  > How should agents find information that allows them to accomplish their tasks?
 
-The solution is _exploration_! Agents should try out different actions and reach unknown states of the environment, to increase awareness about their surroundings. There are several ways to perform exploration. An agent could for instance just act randomly every and now and then, and eventually explore all possible actions and states. However, this process may take an infinite amount of time and recent research has focused on establishing more informed ways to perform exploration.
+The solution is _exploration_! Agents should try out different actions and reach unknown states of the environment, to increase awareness about their surroundings. There are several ways to perform exploration. An agent could for instance just act randomly every now and then, and eventually explore all possible actions and states. However, this process may take an infinite amount of time and recent research has focused on establishing more informed ways to perform exploration.
 
 ## Bayesian Surprise
 
@@ -36,7 +36,7 @@ Bayesian surprise is an information measure to quantify how some data affects th
 
 Initially, the agent knows there is a treasure in one of the boxes but it does not know in which one. If the agent gets only one chance to open a box, randomly picking is not the optimal way to act. Luckily there is a map that tells exactly which box contains the treasure. The agent may want to first go there, gaining information that reduces the uncertainty of its beliefs about the boxes, and then directly go for the right box. 
 
-As can be seen on this figure, one may think of information gain or Bayesian surprise as the extent to which the agent's beliefs distribution (e.g. about which box contains the treasure) becomes narrower with new data (e.g. the information from the map). A more in-depth analysis of Bayesian surprise can be found [here](https://papers.nips.cc/paper/2005/hash/0172d289da48c48de8c5ebf3de9f7ee1-Abstract.html).
+As can be seen in this figure, one may think of information gain or Bayesian surprise as the extent to which the agent's beliefs distribution (e.g. about which box contains the treasure) becomes narrower with new data (e.g. the information from the map). A more in-depth analysis of Bayesian surprise can be found [here](https://papers.nips.cc/paper/2005/hash/0172d289da48c48de8c5ebf3de9f7ee1-Abstract.html).
 
 ## Latent Bayesian Surprise
 
@@ -97,7 +97,6 @@ Finally, we experimented with the DM Control Suite, where we first collect data 
     <b>Task</b>
   </div>
 </div>
-<br/>
 <div style='display: flex; justify-content: center; text-align: center;'>
     <div style="display: inline-block; margin: 0 auto; width: 50%;"><div style='display: flex; justify-content: center; text-align: center;'></div></div>
     <div style="display: inline-block; margin: 0 auto; width: 50%;">
@@ -135,9 +134,9 @@ For more visual results, check out the [project page](https://lbsexploration.git
   
 ## Stochasticity
 
-Stochasticity, i.e. uncontrollable randomness in the environment, is an important issue to address when the agent is driven by curiosity. If the agent simply looks for areas of the environment that it can't accurately predict, it can get stuck in a stochastic noisy state, which constantly changes without bringing any important information for the task. This problem is known in literature as the ["Noisy TV" problem](https://arxiv.org/abs/0812.4360).
+Stochasticity, i.e. uncontrollable randomness in the environment, is an important issue to address when the agent is driven by curiosity. If the agent simply looks for areas of the environment that it can't accurately predict, it can get stuck in a stochastic noisy state, which constantly changes without bringing any important information for the task. This problem is known in the literature as the ["Noisy TV" problem](https://arxiv.org/abs/0812.4360).
 
-Our method, being driven by the principle of looking for interactions that bring significant information to the agent's model, allows to overcome stochasticity, assuming that the latent variable $$z$$ (and so the model) ignores the meaningless noise. We also empirically show this in two variations of the Mountain Car problem, where the agent possesses a remote that triggers a "Noisy TV":
+Our method, being driven by the principle of looking for interactions that bring significant information to the agent's model, allows overcoming stochasticity, assuming that the latent variable $$z$$ (and so the model) ignores the meaningless noise. We also empirically show this in two variations of the Mountain Car problem, where the agent possesses a remote that triggers a "Noisy TV":
 
 
 <div style="display:flex; justify-content: center;">
@@ -150,4 +149,4 @@ Our method achieves the best performance in both variants of the environment. Th
 
 The ability to resolve uncertainty in the environment is a fundamental ability of humans. Every time we need to do something, we tend to first secure that our actions will succeed, e.g. if you need to buy a product, you would likely first search online or ask around to find the best store to buy it, rather than just wandering around until finding what you need.
 
-In a similar way, artificial agents should be curious and find relevant information in the environment by themselves. Exploration approaches such as Latent Bayesian Surprise, which shows outstanding performance across several tasks, are very important in this. At the same time, research should be careful about the Noisy TV problem. Although we found our method to be resilient to simple artificial noise patterns, future studies should focus on studying how more complex stochasticity can affect exploration and to what extent current methods are robust. In addition, we also aim to investigate on how to further structure the latent representation of the model, e.g. using [contrastive learning approaches](https://thesmartrobot.github.io/2021/11/18/contrastive-actinf.html), in order to lead to more efficent and well-directed exploration. 
+In a similar way, artificial agents should be curious and find relevant information in the environment by themselves. Exploration approaches such as Latent Bayesian Surprise, which shows outstanding performance across several tasks, are very important in this. At the same time, research should be careful about the Noisy TV problem. Although we found our method to be resilient to simple artificial noise patterns, future studies should focus on studying how more complex stochasticity can affect exploration and to what extent current methods are robust. In addition, we also aim to investigate how to further structure the latent representation of the model, e.g. using [contrastive learning approaches](https://thesmartrobot.github.io/2021/11/18/contrastive-actinf.html), in order to lead to more efficient and well-directed exploration. 
