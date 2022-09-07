@@ -5,10 +5,28 @@ description: There is no data like more data.
 background: '/img/bg-turtles.png'
 ---
 
+<h2>Drone radar dataset</h2>
+
+<p>This dataset contains camera and radar data from a drone flying in our lab.</p>
+
+<video controls loop width="640">
+  <source src="/video/dataset_drone.mp4" type="video/mp4">
+</video>
+<p>
+  The dataset consists of recording sequences categorized in a number of scenarios, each contained in hd5 files.
+  In each file contains a hdf5 dataset structure labeled by sensor (i.e. radar and camera and depth). 
+  The radar is stored as raw ADC samples, and in addition we also provide post-processed range-doppler and range-azimuth maps.
+  In addition, we also recorded the action commands (yaw, pitch, roll, thrust), and in scenarios where the motion capture
+  system was active a ground truth 6DOF pose is provided.
+  The data can be downloaded by following this 
+  <a href="https://cloud.ilabt.imec.be/index.php/s/rGooqKzBTcbpkjG/download">link</a>
+</p>
+<hr/>
+
 
 <h2>LatentSLAM dataset</h2>
 
-<p>This datasets contains camera, lidar and radar data recorded with a turtlebot2i in our lab.</p>
+<p>This dataset contains camera, lidar and radar data recorded with a turtlebot2i in our lab.</p>
 
 <video controls loop width="640" height="271">
   <source src="/video/dataset_latentslam.mp4" type="video/mp4">
