@@ -17,8 +17,8 @@ In short, we learn a generative model of how objects come about. Robots
 however still lack this kind of intuition, and struggle to consistently 
 manipulate a wide variety of objects.
 
-<div style="display:flex; justify-content: space-evenly; padding: 0em 0em 1em 0em;">
-  <img alt="reacher easy task, with a bigger goal sphere: successful execution" width="50%" src="/img/10_robot_fail.gif">
+<div style="display:flex; justify-content: center;">
+  <img alt="reacher easy task, with a bigger goal sphere: successful execution" width="60%" src="/img/10_robot_fail.gif">
 </div>
 
 
@@ -46,11 +46,10 @@ In our experiments we trained different models for different
 categories of the ShapeNet dataset. We then visualize imagined objects by varying the latent vectors.
 On the left, we only vary the shape latent, in the center we vary the pose latent, and on the right, we vary both. 
 
-<div style=" padding-left: 100px; justify-content: 
-space-evenly; padding: 1em 0em 1em 0em;">
-  <img alt="bottle morphing" width="50%" 
+<div style="display:flex; justify-content: center;">
+  <img alt="bottle morphing" width="70%" 
 src="/img/10_bottle_merge.gif">
-  <img alt="mug morphing" width="50%" 
+  <img alt="mug morphing" width="70%" 
 src="/img/10_mug_merge.gif">
 </div>
 
@@ -65,9 +64,9 @@ On the left, you see an example pose for a specific instance of a mug, and on th
 the actions of our active inference agent to reach a similar pose for 5 different novel mug instances.
 
 
-<div style="padding-left: 100px; justify-content:space-evenly; padding: 1em 0em 1em 0em;">
+<div style="display:flex; justify-content: center;">
   <img alt="move to goal pose" width="100%" 
-src="/home/idlab239/Code/ccn/img/10_moveto_mug.gif">
+src="/img/10_moveto_mug.gif">
 </div>
 
 ## Next steps
