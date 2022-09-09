@@ -48,10 +48,11 @@ On the left, we only vary the shape latent, in the center we vary the pose laten
 
 <div style="display:flex; justify-content: center;">
   <img alt="bottle morphing" width="70%" 
-src="/img/10_bottle_merge.gif">
+src="/img/10_bottle_merge.gif"><br/>
   <img alt="mug morphing" width="70%" 
 src="/img/10_mug_merge.gif">
 </div>
+<br/>
 
 ## Can it generalize?
 
@@ -68,6 +69,7 @@ the actions of our active inference agent to reach a similar pose for 5 differen
   <img alt="move to goal pose" width="100%" 
 src="/img/10_moveto_mug.gif">
 </div>
+<br/>
 
 ## Next steps
 
