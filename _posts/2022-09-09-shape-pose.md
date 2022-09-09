@@ -18,9 +18,8 @@ however still lack this kind of intuition, and struggle to consistently
 manipulate a wide variety of objects.
 
 <div style="display:flex; justify-content: center;">
-  <img alt="reacher easy task, with a bigger goal sphere: successful execution" width="60%" src="/img/10_robot_fail.gif">
+  <img alt="robot fail" width="60%" src="/img/10_robot_fail.gif">
 </div>
-
 
 Following up from [our previous work](https://thesmartrobot.github.io/2021/08/26/thousand-brains.html) we opted for 
 an object-centric representation to tackle the problem at hand. In 
@@ -48,12 +47,13 @@ On the left, we only vary the shape latent, in the center we vary the pose laten
 
 <div style="display:flex; justify-content: center;">
   <img alt="bottle morphing" width="70%" 
-src="/img/10_bottle_merge.gif"><br/>
+src="/img/10_bottle_merge.gif">
+<br/>
+<br/>
   <img alt="mug morphing" width="70%" 
 src="/img/10_mug_merge.gif">
 </div>
 <br/>
-
 ## Can it generalize?
 
 So now we have showed that our models can indeed disentangle shape and pose, does it help to generalize?
@@ -64,13 +64,11 @@ The animation below shows some of our obtained results.
 On the left, you see an example pose for a specific instance of a mug, and on the right, you see
 the actions of our active inference agent to reach a similar pose for 5 different novel mug instances.
 
-
 <div style="display:flex; justify-content: center;">
   <img alt="move to goal pose" width="100%" 
 src="/img/10_moveto_mug.gif">
 </div>
 <br/>
-
 ## Next steps
 
 Learning how to interact with different kinds of objects, and generalizing to novel instances of known object categories is paramount for
