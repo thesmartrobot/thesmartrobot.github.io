@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Disentangling Shape and Pose"
-subtitle: "Grabbing mugs by the handle"
+subtitle: "Grab 'm by the handle"
 author: "Stefano Ferraro"
 background: '/img/bg-franka.png'
 paper:
