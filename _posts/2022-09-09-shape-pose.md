@@ -48,8 +48,8 @@ On the left, we only vary the shape latent, in the center we vary the pose laten
 <div style="display:flex; justify-content: center;">
   <img alt="bottle morphing" width="70%" 
 src="/img/10_bottle_merge.gif">
-<br/>
-<br/>
+</div>
+<div style="display:flex; justify-content: center;">
   <img alt="mug morphing" width="70%" 
 src="/img/10_mug_merge.gif">
 </div>
