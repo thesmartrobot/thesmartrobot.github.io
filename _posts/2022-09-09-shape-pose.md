@@ -22,7 +22,7 @@ manipulate a wide variety of objects.
 </div>
 
 Following up from [our previous work](https://thesmartrobot.github.io/2021/08/26/thousand-brains.html) we opted for 
-an object-centric representation to tackle the problem at hand. In 
+an object-centric representation to tackle the problem at hand [^1]. In 
 order to further generalize the structure of the world around, us we opted for a disentanglement between 
 shape and pose in the object-centric representation. For example, we encounter mugs in all kinds of shapes,
 yet we all take them by the handle. By adopting a 
@@ -76,3 +76,6 @@ building intelligent robot manipulators. This work is a first step in this direc
 As a next step, we plan apply this beyond the ShapeNet dataset, and experiment with more complex, real-world objects and a robotic manipulator.
 
 Are you curious on how we trained our models, check out the paper, or check out my talk at the [International Workshop on Active Inference (IWAI)](https://iwaiworkshop.github.io/)!
+
+
+[^1]: [Toon Van de Maele, Tim Verbelen, Ozan Catal, Bart Dhoedt, Embodied Object Representation Learning and Recognition. Frontiers Neurorobotics, 2022.](https://doi.org/10.3389/fnbot.2022.840658){:target='_blank'}
