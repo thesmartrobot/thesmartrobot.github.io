@@ -5,7 +5,7 @@ subtitle: "Grab 'm by the handle"
 author: "Stefano Ferraro"
 background: '/img/bg-franka.png'
 paper: 'https://arxiv.org/abs/2209.09097'
-video: '/img/10_moveto_mug.gif'
+image: '/img/10_moveto_mug.gif'
 ---
 
 ## Intro
