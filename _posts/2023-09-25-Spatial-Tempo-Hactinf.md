@@ -53,7 +53,7 @@ Using [active inference](https://thesmartrobot.github.io/2020/05/27/active-infer
 
 The agent then navigate purely driven by active inference scheme.
 
-Trying to get the minimise Expected Free Energy (EFE) $G(\pi)$ while choosing a policy $\pi$. The EFE of each policy at timestep T is calculated such that:
+Trying to get the minimise Expected Free Energy (EFE) $$G(\pi)$$ while choosing a policy $$\pi$$. The EFE of each policy at timestep T is calculated such that:
 
 $$
 \begin{equation}
@@ -62,7 +62,7 @@ $$
 \end{equation}
 $$
 
-The exploration is based on the premise that we want to move toward an expected state (here $z$) that allows us to learn the most (info gained by moving, read more about exploration in the blog post [Latent Bayesian Surprise](https://thesmartrobot.github.io/2022/02/23/lbs-exploration.html) up to Bayesian surprise), while the exploitation, or preferrence seeking part favorise policies leading toward expected observations $\tilde{o}$ (with $\tilde{o}$ being the sequence of observations expected given a sequence of action -or policy $\pi$-) ressembling the preferred observation $C$
+The exploration is based on the premise that we want to move toward an expected state (here $$z$$) that allows us to learn the most (info gained by moving, read more about exploration in the blog post [Latent Bayesian Surprise](https://thesmartrobot.github.io/2022/02/23/lbs-exploration.html) up to Bayesian surprise), while the exploitation, or preferrence seeking part favorise policies leading toward expected observations $$\tilde{o}$$ (with $$\tilde{o}$$ being the sequence of observations expected given a sequence of action -or policy $$\pi$$-) ressembling the preferred observation $$C$$
 
 The probability of a policy being chosen is then:
 
@@ -72,7 +72,7 @@ $$
 \end{equation}
 $$
 
-With $\sigma$ being a softmax over the EFE of the policies and $\gamma$ a temperature added to regulate how contrasted will the probabilities be between the one having the highest and lowest probability.
+With $$\sigma$$ being a softmax over the EFE of the policies and $$\gamma$$ a temperature added to regulate how contrasted will the probabilities be between the one having the highest and lowest probability.
 
 In practice exploration or exploitation are weighted depending on the situation. Thus we can balance out which behaviour we want to favor. 
 
