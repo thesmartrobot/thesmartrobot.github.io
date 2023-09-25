@@ -36,7 +36,7 @@ Temporal hierarchy means planing on different time scale, as an example it would
 
 <p align="center">
 <!-- ![My Image](img/spatial_H.png) -->
-<img src='img/11_spatial_H.png' width='600'>
+<img src='/img/11_spatial_H.png' width='600'>
 https://journals.plos.org/ploscompbiol/article/figure?id=10.1371/journal.pcbi.1007594.g001
 </p>
 
@@ -55,18 +55,22 @@ The agent then navigate purely driven by active inference scheme.
 
 Trying to get the minimise Expected Free Energy (EFE) $G(\pi)$ while choosing a policy $\pi$. The EFE of each policy at timestep T is calculated such that:
 
-$
+$$
+\begin{equation}
      G(\pi,T) = \underbrace{D_{KL}[Q(z_T|\pi)||P(z_T)]}_\text{Exploration} \space
      \underbrace{ - \mathbb{E}_{Q'(\tilde{o}|\pi)}[lnP(\tilde{o}|C)]}_\text{Preference\_seeking} 
-$
+\end{equation}
+$$
 
 The exploration is based on the premise that we want to move toward an expected state (here $z$) that allows us to learn the most (info gained by moving, read more about exploration in the blog post [Latent Bayesian Surprise](https://thesmartrobot.github.io/2022/02/23/lbs-exploration.html) up to Bayesian surprise), while the exploitation, or preferrence seeking part favorise policies leading toward expected observations $\tilde{o}$ (with $\tilde{o}$ being the sequence of observations expected given a sequence of action -or policy $\pi$-) ressembling the preferred observation $C$
 
 The probability of a policy being chosen is then:
 
-$
+$$
+\begin{equation}
     P(\pi) = \sigma (-\gamma G(\pi))
-$
+\end{equation}
+$$
 
 With $\sigma$ being a softmax over the EFE of the policies and $\gamma$ a temperature added to regulate how contrasted will the probabilities be between the one having the highest and lowest probability.
 
@@ -86,7 +90,7 @@ In **bold** are limitations palliated by the model hierarchy
 The high level produces a topological map, it learns the overall world structure and the connection between places. The layout is relatively similar to what is described in the blog post [LatentSLAM](https://thesmartrobot.github.io/2021/05/11/latentslam.html).
 <p align="center">
 <!-- ![My Image|50%](img/map_path_topo.jpg ) -->
-<img src='img/11_map_path_topo.jpg' width='500'>
+<img src='/img/11_map_path_topo.jpg' width='500'>
 </p>
 
 Whenever the agent moves to a new location it creates a new node for it and link it to the previous location. As can be seen above, upon recognising the place, close loop is realised. 
@@ -116,7 +120,7 @@ At the second layer of the hierarchy we have the allocentric map, based on the b
 Below you can see its structure with the place z being updated with each new pose p and observation o then being able to predict any new observation from unvisited pose p. The right gif shows this mechanism in action, a place is generated over consecutive observations and gets more and more accurate. Then from any pose in this room, the observation is expected to be accurate as well.
 
 <p align="center">
-<img src='img/11_GQN_net.png' width='250'> | <img src='img/11_place_over_steps.gif' width='350'>
+<img src='/img/11_GQN_net.png' width='250'> | <img src='/img/11_place_over_steps.gif' width='350'>
 </p>
 
 ### PRO 
@@ -142,7 +146,7 @@ The lowest level of the hierarchy us there to infer the dynamic of the agent and
 
 <p align="center">
 <!-- ![My Image|50%](img/map_path_topo.jpg ) -->
-<img src='img/11_POMDP_ego_model.png' width='400'>
+<img src='/img/11_POMDP_ego_model.png' width='400'>
 </p>
 
 ### Pro
