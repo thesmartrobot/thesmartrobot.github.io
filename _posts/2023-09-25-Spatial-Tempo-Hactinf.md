@@ -4,7 +4,7 @@ title: "Hierarchy to navigate"
 subtitle: "Reasoning over space and time to effectively explore and reach an objective"
 author: "Daria de Tinguy"
 background: '/img/bg-turtles.png'
-#paper: https://arxiv.org/abs/1904.08149
+paper: https://www.mdpi.com/1099-4300/26/1/83
 ---
 
 
